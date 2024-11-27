@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates">
+  <meta name="keywords" content="Material Decomposition, PBR, Diffusion Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Yijia Hong</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Yuan-Chen Guo</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://yiranran.github.io/">Ran Yi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yulong Chen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yan-Pei Cao</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Lizhuang Ma</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>2</sup>VAST</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2411.17515"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2411.17515"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hyj542682306/SuperMat"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (comming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="teaser">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <div class="column has-text-centered">
+        <div class="content">
+          <h3 class="title is-4">
+          </h3>
+          <div class="item">
+            <img src="./static/images/teaser.png" alt="Descriptive Alt Text" height="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Decomposing physically-based materials from images into their constituent properties remains challenging, particularly when maintaining both computational efficiency and physical consistency. 
+            While recent diffusion-based approaches have shown promise, they face substantial computational overhead due to multiple denoising steps and separate models for different material properties. 
+            We present SuperMat, a single-step framework that achieves high-quality material decomposition with one-step inference. 
+            This enables end-to-end training with perceptual and re-render losses while decomposing albedo, metallic, and roughness maps at millisecond-scale speeds. 
+            We further extend our framework to 3D objects through a UV refinement network, enabling consistent material estimation across viewpoints while maintaining efficiency. 
+            Experiments demonstrate that SuperMat achieves state-of-the-art PBR material decomposition quality while reducing inference time from seconds to milliseconds per image, and completes PBR material estimation for 3D objects in approximately 3 seconds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview of SuperMat</h2>
+        <div class="columns is-centered">
+          <img src="./static/images/supermat_overview.png" class="interpolation-image" alt="Interpolate start reference image.">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            SuperMat is an image space material decomposition model fine-tuned from Stable Diffusion that efficiently generates high-quality albedo, metallic, and roughness maps simultaneously.
+            It supports single-step inference and end-to-end training.
+            Given a rendered or captured image of an object under an unknown lighting condition from a specific viewpoint, SuperMat generates the corresponding material maps for the model from that same viewpoint.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview of material decomposition pipeline for 3D objects</h2>
+        <div class="columns is-centered">
+          <img src="./static/images/pipeline_3d_overview.png" class="interpolation-image" alt="Interpolate start reference image.">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Given an object with only RGB texture, we first render it from six orthogonal viewpoints. 
+            The rendered results are then batch-processed by SuperMat for material decomposition. 
+            These materials, including albedo and RM, are backprojected into UV space and blended.
+            The blended partial maps are then refined by the UV refinement one-step model and the final material UV maps are generated.
+            This process requires only three inference steps—one for SuperMat, one for refining albedo, and one for refining RM-allowing our pipeline to complete the material decomposition of a 3D object in just 3 seconds.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Image space material decomposition</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-1">
+            <img src="./static/images/supermat_results_1.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-2">
+            <img src="./static/images/supermat_results_2.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-3">
+            <img src="./static/images/supermat_results_3.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-4">
+            <img src="./static/images/supermat_results_4.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-5">
+            <img src="./static/images/supermat_results_5.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-6">
+            <img src="./static/images/supermat_results_6.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-7">
+            <img src="./static/images/supermat_results_7.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-8">
+            <img src="./static/images/supermat_results_8.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-9">
+            <img src="./static/images/supermat_results_9.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+          <div class="item item-10">
+            <img src="./static/images/supermat_results_10.png" class="interpolation-image" alt="Interpolate start reference image.">
+          </div>
+        </div>
+        <!-- <div class="content has-text-justified">
+          <p>
+            We
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Material decomposition for 3D objects</h2>
+        <div class="columns is-centered">
+          <img src="./static/images/3d_results.png" class="interpolation-image" alt="Interpolate start reference image.">
+        </div>
+        <!-- <div class="content has-text-justified">
+          <p>
+            We
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{hong2024supermatphysicallyconsistentpbr,
+      title={SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates}, 
+      author={Yijia Hong and Yuan-Chen Guo and Ran Yi and Yulong Chen and Yan-Pei Cao and Lizhuang Ma},
+      year={2024},
+      eprint={2411.17515},
+      archivePrefix={arXiv},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> for our website.
+            We sincerely appreciate Nerfies authors for their awesome templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
