@@ -175,10 +175,10 @@
         <div class="content has-text-justified">
           <p>
             Given an object with only RGB texture, we first render it from six orthogonal viewpoints. 
-            The rendered results are then batch-processed by SuperMat for material decomposition. 
+            The rendered results are then batch-processed by SuperMatMV for material decomposition. 
             These materials, including albedo and RM, are backprojected into UV space and blended.
             The blended partial maps are then refined by the UV refinement one-step model and the final material UV maps are generated.
-            This process requires only three inference steps—one for SuperMat, one for refining albedo, and one for refining RM-allowing our pipeline to complete the material decomposition of a 3D object in just 3 seconds.
+            This process requires only three inference steps—one for SuperMatMV, one for refining albedo, and one for refining RM-allowing our pipeline to complete the material decomposition of a 3D object in just 3 seconds.
         </div>
       </div>
     </div>
